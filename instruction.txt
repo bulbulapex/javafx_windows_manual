@@ -1,0 +1,56 @@
+1. download jdk-21_windows-x64_bin and openjfx-23_windows-x64_bin-sdk
+
+2. install jdk-21_windows-x64_bin
+
+3. extract openjfx-23_windows-x64_bin-sdk
+
+4. copy 'javafx-sdk-23' folder and paste 'C:\Program Files\Java' into this path
+
+
+5. go to edit the system environment variables -> environment variables 
+
+6. Click new under User variables and create two variable
+ 
+variable name: JAVA_HOME
+variable value: C:\Program Files\Java\javafx-sdk-23
+
+
+variable name: PATH_TO_FX
+variable value: C:\Program Files\Java\javafx-sdk-23\lib
+
+7. save and restart pc
+
+8. for fxml file edit by graphical interface need to install SceneBuilder software
+
+9. compile and run for javafx execute the below script
+
+javac --module-path "%PATH_TO_FX%" --add-modules javafx.controls,javafx.fxml JavaFxTest1.java
+java --module-path "%PATH_TO_FX%" --add-modules javafx.controls,javafx.fxml JavaFxTest1
+
+--If a controller add in fxml file then compile with controller file.
+javac --module-path "%PATH_TO_FX%" --add-modules javafx.controls,javafx.fxml MainApp.java Controller.java
+java --module-path "%PATH_TO_FX%" --add-modules javafx.controls,javafx.fxml MainApp
+
+
+
+
+---run without load fxml file
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+ 
+public class MainApp extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        Label label = new Label("Hello, JavaFX 21!");
+        Scene scene = new Scene(label, 400, 200);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("JavaFX Test");
+        primaryStage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
