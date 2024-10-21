@@ -58,3 +58,7 @@ public class MainApp extends Application {
 10. db connection java connector download link
 https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/
 then download this file --> mysql-connector-j-8.0.33.jar
+
+11. check db host name and port
+SHOW VARIABLES LIKE 'hostname';
+ SHOW VARIABLES LIKE 'port';
